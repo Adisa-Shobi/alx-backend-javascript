@@ -1,6 +1,6 @@
 export default function getListStudentIds(objList) {
   let ids = [];
-  if (typeof objList !== 'object') return ids;
+  if (!Array.isArray(objList)) return ids;
   ids = objList.map((x) => x.id);
   return ids;
 }
