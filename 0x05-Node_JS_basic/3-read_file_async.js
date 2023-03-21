@@ -1,10 +1,11 @@
 const fs = require('fs');
 
-function countStudents (path) {
+function countStudents(path) {
   return new Promise((resolve, reject) => {
-    fs.readFile(path, 'utf8', function (err, data) {
-      if (err) {
-        throw new Error('Cannot load the database');
+    fs.readFile(path, 'utf8', (err, data) => {
+      if (data === undefined || err) {
+        reject(new Error('Cannot load the database'));
+        return;
       }
       const resp = [];
       let lines = data.toString().split(/\r\n|\n/);
@@ -15,7 +16,7 @@ function countStudents (path) {
       console.log(msg);
       resp.push(msg);
       const fields = {};
-      for (let i = 1; i < lines.length; i++) {
+      for (let i = 1; i < lines.length; i += 1) {
         const line = lines[i];
         const field = line[line.length - 1];
         if (field in fields) {
