@@ -55,6 +55,8 @@ const app = http.createServer(async (req, res) => {
     res.write('This is the list of our students\n');
     res.end(data.join('\n'));
   }
+  res.statusCode = 404;
+  res.end();
 });
 
 app.listen(port, hostname, () => {
