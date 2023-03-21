@@ -10,3 +10,5 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
   console.log(`Running on http://127.0.0.1:${port}`);
 });
+
+module.exports = app;
