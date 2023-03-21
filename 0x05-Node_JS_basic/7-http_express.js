@@ -12,6 +12,7 @@ app.get('/', (req, res) => {
 app.get('/students', async (req, res) => {
   const pre = 'This is the list of our students\n';
   let data;
+  res.header('Content-Type', 'text/plain');
   try {
     data = await countStudents(database);
     res.send(`${pre}${data.join('\n')}`);

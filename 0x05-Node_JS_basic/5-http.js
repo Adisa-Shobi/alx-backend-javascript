@@ -45,7 +45,7 @@ const app = http.createServer(async (req, res) => {
     res.end('Hello Holberton School!');
   }
   if (req.url === '/students') {
-    const database = process.argv[2];
+    const database = process.argv[2] ? process.argv[2] : '';
     let data;
     try {
       data = await countStudents(database);
