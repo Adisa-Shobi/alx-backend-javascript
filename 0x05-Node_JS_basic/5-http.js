@@ -15,7 +15,12 @@ const app = http.createServer(async (req, res) => {
   }
   if (reqUrl === '/students') {
     const database = process.argv[2];
-    const data = await countStudents(database);
+    let data;
+    try {
+      data = await countStudents(database);
+    } catch (err) {
+      res.end(err.message);
+    }
     res.write('This is the list of our students\n');
     res.write(data.join('\n'));
     res.end();
