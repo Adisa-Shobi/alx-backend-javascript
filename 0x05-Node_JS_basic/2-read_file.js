@@ -13,7 +13,7 @@ function countStudents(path) {
   const numberOfStudents = lines.length ? lines.length - 1 : 0;
   console.log(`Number of students: ${numberOfStudents}`);
   const fields = {};
-  for (let i = 1; i < lines.length; i = 1 + 1) {
+  for (let i = 1; i < lines.length; i += 1) {
     const line = lines[i];
     const field = line[line.length - 1];
     if (field in fields) { fields[field].push(line[0]); } else { fields[field] = [line[0]]; }
