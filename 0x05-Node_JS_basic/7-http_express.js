@@ -17,7 +17,7 @@ app.get('/students', async (req, res) => {
     data = await countStudents(database);
     res.send(`${pre}${data.join('\n')}`);
   } catch (err) {
-    res.send(err.message);
+    res.send(`${pre}${err.message}`);
   }
 });
 
