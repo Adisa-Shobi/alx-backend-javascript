@@ -7,7 +7,7 @@ class StudentsController {
     try {
       fields = await readDatabase(db);
     } catch (err) {
-      res.send(`${pre}${err.message}`);
+      res.send(err.message});
       res.end();
     }
     const resp = [];
