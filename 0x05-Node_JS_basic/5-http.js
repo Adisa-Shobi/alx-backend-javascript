@@ -47,12 +47,12 @@ const app = http.createServer(async (req, res) => {
   if (req.url === '/students') {
     const database = process.argv[2] ? process.argv[2] : '';
     let data;
+    res.write('This is the list of our students\n');
     try {
       data = await countStudents(database);
     } catch (err) {
       res.end(err.message);
     }
-    res.write('This is the list of our students\n');
     res.end(data.join('\n'));
   }
   res.statusCode = 404;
