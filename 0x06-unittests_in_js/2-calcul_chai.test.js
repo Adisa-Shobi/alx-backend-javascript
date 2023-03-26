@@ -1,5 +1,5 @@
 const chai = require('chai');
-const calculateNumber = require('./2-calcul');
+const calculateNumber = require('./2-calcul_chai');
 
 describe('tests for the upgraded calculateNumber function', () => {
   describe('test for SUM operation', () => {
