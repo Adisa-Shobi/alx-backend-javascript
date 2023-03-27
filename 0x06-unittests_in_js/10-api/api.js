@@ -22,7 +22,7 @@ app.post('/login', (req, res) => {
     let username = "";
     if (req.body)
 	username = req.body.userName
-    res.end(`Welcome: ${username}`)
+    res.end(`Welcome ${username}`)
 })
 
 app.listen(port, () => {
