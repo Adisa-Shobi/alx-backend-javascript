@@ -44,7 +44,7 @@ describe('test for /login and /available_payments', () => {
 			 { json: { userName: 'Shobi' } },
 			 (err, resp, body) => {
           chai.expect(resp.statusCode).is.equal(200);
-          chai.expect(resp.body).is.equal('Welcome: Shobi');
+          chai.expect(resp.body).is.equal('Welcome Shobi');
           done();
 	    });
     }));
